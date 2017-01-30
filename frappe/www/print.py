@@ -151,6 +151,7 @@ def get_html(doc, name=None, print_format=None, meta=None,
 
 	html = template.render(args, filters={"len": len})
 
+
 	if cint(trigger_print):
 		html += trigger_print_script
 

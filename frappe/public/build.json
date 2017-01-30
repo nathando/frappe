@@ -71,6 +71,7 @@
 		"public/js/lib/moment/moment-timezone-with-data.min.js",
 		"public/js/lib/socket.io.min.js",
 		"public/js/lib/markdown.js",
+		"public/js/lib/jSignature.min.js",
 		"public/js/frappe/translate.js",
 		"public/js/lib/datepicker/datepicker.min.js",
 		"public/js/lib/datepicker/datepicker.en.js"
@@ -126,7 +127,6 @@
 		"public/js/frappe/misc/help.js",
 		"public/js/frappe/misc/help_links.js",
 		"public/js/frappe/misc/address_and_contact.js",
-
 		"public/js/frappe/ui/upload.html",
 		"public/js/frappe/upload.js",
 		"public/js/frappe/ui/tree.js",

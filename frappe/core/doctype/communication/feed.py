@@ -63,6 +63,7 @@ def logout_feed(user, reason):
 		subject = _("{0} logged out: {1}").format(get_fullname(user), frappe.bold(reason))
 		add_authentication_log(subject, user, operation="Logout")
 
+
 def get_feed_match_conditions(user=None, force=True):
 	if not user: user = frappe.session.user
 

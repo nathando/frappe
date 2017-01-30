@@ -91,7 +91,7 @@ def get_context(context):
 	def send(self, doc):
 		'''Build recipients and send email alert'''
 		context = get_context(doc)
-
+		
 		recipients = []
 		for recipient in self.recipients:
 			if recipient.condition:
