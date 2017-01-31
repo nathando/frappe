@@ -59,7 +59,7 @@ class HTTPRequest:
 
 		# check status
 		check_session_stopped()
-
+		
 		# run login triggers
 		if frappe.form_dict.get('cmd')=='login':
 			frappe.local.login_manager.run_trigger('on_session_creation')
@@ -107,7 +107,6 @@ class LoginManager:
 
 			# run login triggers
 			self.run_trigger('on_session_creation')
-			
 		else:
 			try:
 				self.resume = True

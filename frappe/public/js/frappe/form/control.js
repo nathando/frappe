@@ -1115,9 +1115,6 @@ frappe.ui.form.ControlSelect = frappe.ui.form.ControlData.extend({
 		if(typeof this.df.options==="string") {
 			options = this.df.options.split("\n");
 		}
-		if(this.in_filter && options[0] != "") {
-			options = add_lists([''], options);
-		}
 
 		// nothing changed
 		if(options.toString() === this.last_options) {
@@ -1160,7 +1157,8 @@ frappe.ui.form.ControlSelect = frappe.ui.form.ControlData.extend({
 frappe.ui.form.ControlLink = frappe.ui.form.ControlData.extend({
 	make_input: function() {
 		var me = this;
-		$('<div class="link-field ui-front" style="position: relative;">\
+		// line-height: 1 is for Mozilla 51, shows extra padding otherwise
+		$('<div class="link-field ui-front" style="position: relative; line-height: 1;">\
 			<input type="text" class="input-with-feedback form-control">\
 			<span class="link-btn">\
 				<a class="btn-open no-decoration" title="' + __("Open Link") + '">\
