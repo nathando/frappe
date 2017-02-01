@@ -365,20 +365,12 @@ frappe.ui.form.Timeline = Class.extend({
 			out = [].concat(docinfo.communications);
 
 		if(with_versions) {
-			var add_comment = function(version, text, comment_type) {
-				if(!comment_type) {
-					text = '<a href="#Form/Version/'+version.name+'">' + text + '</a>';
-				}
-				out.push({
-					comment_type: comment_type || 'Edit',
-					creation: version.creation,
-					owner: version.owner,
-					version_name: version.name,
-					sender: version.owner,
-					comment_by: version.owner,
-					content: text
-				});
-			}
+			this.build_version_comments(docinfo, out);
+		}
+		return out;
+	},
+	build_version_comments: function(docinfo, out) {
+		var me = this;
 
 		docinfo.versions.forEach(function(version) {
 			if(!version.data) return;
