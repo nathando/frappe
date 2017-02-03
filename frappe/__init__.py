@@ -1198,6 +1198,9 @@ def get_print(doctype=None, name=None, print_format=None, style=None, html=None,
 		html = build_page("print")
 
 	if as_pdf:
+		# orientation = "Potrait"
+		# if doc.orientation:
+			# orientation = doc.orientation
 		return get_pdf(html,options= {"orientation": "Landscape"}, output = output)
 	else:
 		return html

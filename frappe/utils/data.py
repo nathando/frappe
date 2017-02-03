@@ -759,7 +759,7 @@ def expand_relative_urls(html):
 
 		return "".join(to_expand)
 
-	html = re.sub('(href|src){1}([\s]*=[\s]*[\'"]?)((?!http)[^\'" >]+)([\'"]?)', _expand_relative_urls, html)
+	html = re.sub('(href|src){1}([\s]*=[\s]*[\'"]?)((?!http|data:image\/[a-zA-Z]*;base64)[^\'" >]+)([\'"]?)', _expand_relative_urls, html)
 
 	# background-image: url('/assets/...')
 	html = re.sub('(:[\s]?url)(\([\'"]?)([^\)]*)([\'"]?\))', _expand_relative_urls, html)
